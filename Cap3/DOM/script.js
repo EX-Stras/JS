@@ -40,3 +40,5 @@ console.log(window.navigator.language)
 // Retorne a largura da janela 
 
 console.log(window.innerWidth)
+
+
