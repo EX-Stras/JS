@@ -46,23 +46,23 @@ console.log('EXERCÍCIO:')
   const marca = 'Fiat';
   let portas = 4;
 }
-console.log(var, marca, portas);
+console.log(cor/*, marca, portas*/); //porque marca e porta foram definidas com let e const, que não atravessam as chaves.
 
 // Como corrigir o erro abaixo?
-function somarDois(x) {
   const dois = 2;
+function somarDois(x) {
   return x + dois;
 }
 function dividirDois(x) {
-  return x + dois;
+  return x / dois;
 }
-somarDois(4);
-dividirDois(6);
+console.log(somarDois(4))
+console.log(dividirDois(6))
 
 // O que fazer para total retornar 500?
-var numero = 50;
+let numero = 50;
 
-for(var numero = 0; numero < 10; numero++) {
+for(let numero = 0; numero < 10; numero++) {
   console.log(numero);
 }
 
