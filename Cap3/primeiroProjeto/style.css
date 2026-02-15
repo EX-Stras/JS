@@ -66,7 +66,6 @@ div.imgs {
 } 
 
 div.imgs section {
-    background-color: rgb(0, 0, 0);
     width: 90%;
 }
 
@@ -160,6 +159,7 @@ div.contato p {
 
 div.imgc img {
     width: 100%;
+    min-width: 150px;
 }
 
 footer {
@@ -220,6 +220,10 @@ footer p {
     
     div.imgc {
         grid-area: 9 / 1 / 10 / 2;
+    }
+
+    div.imgs section {
+        padding-left: 10px;
     }
 
     div.imgc img {
