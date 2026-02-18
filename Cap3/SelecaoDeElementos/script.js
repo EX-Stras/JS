@@ -45,13 +45,13 @@ teste2.forEach(function(item){
 })*/
 
 // Retorne no console todas as imagens do site
-const imgs = document.querySelector('#pegar')
+const imgs = document.querySelectorAll('img')
 
-console.log(imgs.innerHTML)
+console.log(imgs)
 
 // Retorne no console apenas as imagens que começaram com a palavra imagem
 
-const img = imgs.querySelectorAll('[src^="img/imagem')
+const img = document.querySelectorAll('[src^="img/imagem')
 
 img.forEach(function(item){
     console.log(item)
@@ -74,6 +74,6 @@ console.log(h2)
 
 // Selecione o último p do site
 
-const body = document.querySelector('p:last-child')
+const p = document.querySelectorAll('p')
 
-console.log(body)
+console.log(p[p.length - 1])
