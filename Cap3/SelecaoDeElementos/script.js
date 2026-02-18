@@ -1,3 +1,4 @@
+/*
 const id = document.getElementById('pegar');
 
 console.log(id);
@@ -32,3 +33,5 @@ if (tio2[x + 1] === undefined)
 const linksInternos = document.querySelectorAll('[href^="#"]')
 
 console.log(linksInternos)
+*/
+
