@@ -35,3 +35,45 @@ const linksInternos = document.querySelectorAll('[href^="#"]')
 console.log(linksInternos)
 */
 
+/*
+const teste = document.querySelector('.contato');
+
+const teste2 = teste.querySelectorAll('p');
+
+teste2.forEach(function(item){
+    console.log(item.innerText)
+})*/
+
+// Retorne no console todas as imagens do site
+const imgs = document.querySelector('#pegar')
+
+console.log(imgs.innerHTML)
+
+// Retorne no console apenas as imagens que começaram com a palavra imagem
+
+const img = imgs.querySelectorAll('[src^="img/imagem')
+
+img.forEach(function(item){
+    console.log(item)
+})
+
+// Selecione todos os links internos (onde o href começa com #)
+
+const linksInternos = document.querySelectorAll('[href^="#"]')
+
+linksInternos.forEach(function(item){
+    console.log(item)
+})
+// Selecione o primeiro h2 dentro de .animais-descricao
+
+const descriçao = document.querySelector('.primario')
+
+const h2 = descriçao.querySelector('h2')
+
+console.log(h2)
+
+// Selecione o último p do site
+
+const body = document.querySelector('p:last-child')
+
+console.log(body)
