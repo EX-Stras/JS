@@ -177,6 +177,10 @@ footer p {
     color: black;
 }
 
+.azul {
+    background-color: blue;
+}
+
 @media screen and (max-width: 780px){
     
     body {
