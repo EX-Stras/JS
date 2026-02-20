@@ -67,6 +67,12 @@ div.imgs {
 
 div.imgs section {
     width: 90%;
+    height: 500px;
+    overflow-y: auto;
+}
+
+div.imgs section::-webkit-scrollbar {
+    background-color: transparent;
 }
 
 div.imgs img {
@@ -176,7 +182,6 @@ footer p {
     margin: 0 15px;
     color: black;
 }
-
 @media screen and (max-width: 780px){
     
     body {
