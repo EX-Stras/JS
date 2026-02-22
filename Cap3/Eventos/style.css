@@ -188,6 +188,9 @@ footer p {
     margin: 0 15px;
     color: black;
 }
+.size {
+    font-size: 1.2em;
+}
 
 @media screen and (max-width: 780px){
     
