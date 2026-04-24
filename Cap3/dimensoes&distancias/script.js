@@ -12,7 +12,7 @@ console.log(`${section.clientWidth}px`)
 console.log(`${section.offsetWidth}px`)
 console.log(`${section.scrollWidth}px`)
 
-console.log('DISTANCIA ATÉ A BORDA:')
+console.log('DISTANCIA ATÉ A BORDA:') 
 
 console.log(`${section.offsetLeft}px`)
 console.log(`${section.offsetTop}px`)
