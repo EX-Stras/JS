@@ -85,71 +85,22 @@ animacao_scroll()
 
 
 
-/*
+const nome = "Lucas"
+const ano = new String(2018) 
 
-function DOM(seletor) {
-    this.nome = 'Lucas'
-    this.seletor = seletor
-    this.elemento = document.querySelector(seletor)
-    this.addClasse = function(classe){
-        this.elemento.classList.add(classe)
-    }
-    this.removeClasse = function(classe){
-        this.elemento.classList.remove(classe)
-    }
-}
+console.log(nome[--nome.length])
 
-const primeiraDiv = new DOM('div');
+const nomeCompleto = nome.concat(ano,' ','hetero')
 
-console.log(DOM.prototype)
-console.log(primeiraDiv.prototype)
+console.log(nome.includes('Lu'))
+console.log(nome.startsWith('Lu'), nome.endsWith('as'))
 
-DOM.prototype.digaOla = function(){
-    console.log(`diga olá ${this.seletor}, você está sendo observado!`)
-}
+const exemplo = 'hetero'
 
-*/
+console.log(exemplo.slice(-3, -2))
 
-// Crie uma função construtora de Pessoas
-// Deve conter nome, sobrenome e idade
-// Crie um método no protótipo que retorne
-// o nome completo da pessoa
+console.log(exemplo.indexOf('e'))
+console.log(exemplo.lastIndexOf('e'))
 
-function Pessoas(nome, sobrenome, idade){
-    this.nome = nome;
-    this.sobrenome = sobrenome;
-    this.idade = idade;
-}
-
-Pessoas.prototype.nomeCompleto = function(){
-    return this.nome + " " + this.sobrenome;
-}
-
-const Lucas = new Pessoas("Lucas", "Menêzes", 15)
-
-// Liste os métodos acessados por 
-// dados criados com NodeList,
-// HTMLCollection, Document
-
-console.log(
-    NodeList.prototype,
-    HTMLCollection.prototype,
-    Document.prototype
-)
-
-// Liste os construtores dos dados abaixo
-
-const h2 = document.querySelector('div.faq h2');
-
-console.log(h2.constructor.name)
-console.log(h2.click.constructor.name)
-console.log(h2.innerText.constructor.name)
-//console.log(h2.value.constructor.name) //não funciona
-console.log(h2.hidden.constructor.name)
-console.log(h2.offsetLeft.constructor.name)
-//console.log(h2.click().constructor.name) //não funciona
-
-
-// Qual o construtor do dado abaixo:
-
-console.log(h2.hidden.constructor.name)
+console.log(exemplo.padEnd(10, '.'))
+console.log(exemplo.padStart(10, '.'))
