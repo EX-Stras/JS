@@ -91,12 +91,23 @@ function ArrayEiteracao(){
 
     console.log(querer)
 
-    const nums = [1,2,3]
+    const nums = ['',1,2,3,0]
 
     nums.reduce((acumulador, item, index, array) => {
         console.log(acumulador, item, index, array)
         return item;
     }, 0)
+
+    const num = nums.some(item => {
+        return item;
+    })
     
+    console.log(num)
+
+    const num2 = nums.every(item => {
+        return item;
+    })
+    
+    console.log(num2)
 }
 ArrayEiteracao()
