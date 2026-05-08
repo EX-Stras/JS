@@ -130,18 +130,36 @@ ArrayEiteracao()
 // com objetos contendo o título, descricao,
 // aulas e horas de cada curso
 
-const cursos = document.querySelectorAll('section.curso')
+let cursos = document.querySelectorAll('section.curso')
+cursos = Array.from(cursos)
 
+const info = cursos.map((item, index) => {
+    return {
+        titulo: cursos[index].querySelector('h1').innerText,
+        descricao: cursos[index].querySelector('p').innerText,
+        quantidade_de_aulas: cursos[index].querySelector('span.aulas').innerText,
+        horas_de_curso: cursos[index].querySelector('span.horas').innerText,
+    }
+})
+
+console.log(info)
 
 // Retorne uma lista com os
 // números maiores que 100
 const numeros = [3, 44, 333, 23, 122, 322, 33];
+
+const MaiorQue100 = numeros.filter(item => item > 100)
 
 
 // Verifique se Baixo faz parte
 // da lista de instrumentos e retorne true
 const instrumentos = ['Guitarra', 'Baixo', 'Bateria', 'Teclado']
 
+const ExisteBaixo = instrumentos.some(item => {
+    return item.toLocaleLowerCase() === "baixo"
+})
+
+console.log(ExisteBaixo)
 
 // Retorne o valor total das compras
 const compras = [
@@ -166,3 +184,9 @@ const compras = [
     preco: 'R$ 10,60'
   }
 ]
+
+let Total = compras.reduce((acc, item, index) => {
+    return acc += (item.preco.replace('R$ ','').trim().replace(',','.')) * 1
+}, 0)
+
+Total = Total.toLocaleString('pt-BR', {style: "currency", currency: "BRL"})
