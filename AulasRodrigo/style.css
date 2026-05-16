@@ -1,5 +1,24 @@
 @charset "UTF-8";
 
-.azul {
-    background-color: blue;
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr;
+    height: 100vh;
+}
+
+form {
+    grid-area: 2 / 1 / 3 / -1;
+    display: grid;
+    grid-template: 1fr 1fr / 2fr 1fr 2fr;
+}
+
+input.select {
+    padding: 10px;
+    height: 10px;
+    width: 10px;
+    justify-self: center;
+    align-self: center;
 }
