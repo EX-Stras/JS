@@ -1,16 +1,16 @@
 console.clear()
 
 function initTabNav(){
-    const imagens = document.querySelectorAll('.js-tabmenu img')
-    const textos = document.querySelectorAll('.js-tabcontent section')
-    textos[0].classList.add('ativo')
+    const imagens = document.querySelectorAll('[data-js=js-tabmenu] img')
+    const textos = document.querySelectorAll('[data-js=js-tabcontent] section')
+    textos[0].classList.add(textos[0].dataset.anime)
     let num = 0;
 
     function ativarTAB(index){
         textos.forEach(item => {
-            item.classList.remove('ativo')
+            item.classList.remove(item.dataset.anime)
         })
-        textos[index].classList.add('ativo')
+        textos[index].classList.add(textos[index].dataset.anime)
     }
 
     imagens.forEach((item, index) => {
@@ -24,12 +24,12 @@ initTabNav()
 
 
 function accordion_list(){
-    const perguntas = document.querySelectorAll('.js-accordion h2')
-    const respostas = document.querySelectorAll('.js-accordion p')
+    const perguntas = document.querySelectorAll('[data-js=js-accordion] h2')
+    const respostas = document.querySelectorAll('[data-js=js-accordion] p')
 
     function mostrar(event){
         this.classList.toggle('mudar')
-        this.nextElementSibling.classList.toggle('ativo')
+        this.nextElementSibling.classList.toggle('show-right')
     }
     
     perguntas.forEach((item, index) => {
@@ -41,7 +41,7 @@ accordion_list()
 
 
 function scroll_suave(){
-    const links_internos = document.querySelectorAll('.js-menu a[href^="#"]')
+    const links_internos = document.querySelectorAll('[data-js=js-menu] a[href^="#"]')
 
     function scroll(event){
         event.preventDefault()
@@ -63,7 +63,7 @@ scroll_suave()
 
 
 function animacao_scroll(){
-    const sections = document.querySelectorAll('.js-scroll')
+    const sections = document.querySelectorAll('[data-js=js-scroll]')
 
     function animacao(event){
         sections.forEach(item => {
