@@ -293,17 +293,16 @@ button {
 button.fechar {
     position: absolute;
     align-items: center;
-    padding: 8px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding: 8px 12px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     font-size: 1.4em;
-    border: 2px solid var(--cor-terciaria);
+    border: solid 2px var(--cor-terciaria);
     transition: .5s;
-    background-color: rgb(241, 232, 217);
-    transform: translate3d(0, -185%, 0);
-    left: 63%;
+    background-color: #E06600;
+    transform: translate3d(470%, -180%, 0);
+    color: rgba(46, 46, 46, 0.771);
+    border-radius: 20px;
 }
 
 button.fechar:hover { 
@@ -366,6 +365,57 @@ button[type="submit"]:hover {
     letter-spacing: .5px;
 }
 
+[data-dropdown]{
+    position: relative;
+    padding: 10px 0px;
+}
+
+menu.dropDownMenu {
+    position: absolute;
+    background-color: #E06600;
+    padding: 15.5px;
+    z-index: 200;
+    top: 38px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    display: none;
+}
+
+menu.drop {
+    display: flex;
+    animation: dropDown .3s forwards;
+}
+
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+menu.dropDownMenu::before {
+    content: '';
+    color: black;
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 18%;
+    width: 0px;
+    height: 0px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #E06600;
+}
+
+menu.dropDownMenu a:hover {
+    color: rgb(242, 242, 242);
+}
+
 @keyframes voltar {
     0% {
         transform: translate3d(50px,0,0);
@@ -402,6 +452,7 @@ button[type="submit"]:hover {
     } 100% {
         transform: translate3d(50px,0,0);
         opacity: 0.5;
+        max-width: 40%;
     }
 }
 
@@ -451,7 +502,7 @@ button[type="submit"]:hover {
 
 @media screen and (max-width: 780px){
     
-    body {
+    div[data-mod="grid"] {
         padding: 0;
         grid-template: 60px 200px auto 1fr 1fr auto 0.5fr 0.5fr auto 100px 60px / auto auto;
     }
@@ -462,28 +513,35 @@ button[type="submit"]:hover {
 
     div.title1 {
         grid-area: 2 / 1 / 3 / -1;
+        max-width: 65%;
     }
 
     div.imgs {
         grid-area: 3 / 1 / 4 / 2; 
+        margin-left: 10px;
+        width: 80%;
     }
 
     div.imgs section {
-        width: 80%;
+        width: 97%;
     }
 
     main.primario {
         grid-area: 3 / 2 / 4 / -1;
         padding-right: 10px;
+        max-width: 100%;
     }
 
     div.title2 {
-        grid-area: 5 / 1 / 6 / -1
+        grid-area: 5 / 1 / 6 / -1;
+        max-width: 30%;
     }
 
     div.faq {
         grid-area:  6 / 1 / 7 / -1;
         padding: 0 10px 0 10px;
+        max-width: 100%;
+        margin-left: 30px;
     }
 
     div.title3 {
@@ -494,14 +552,10 @@ button[type="submit"]:hover {
         grid-area: 9 / 1 / 10 / 2;
     }
 
-    div.imgs section {
-        padding-left: 10px;
-    }
-
     div.imgc img {
         width: 100%;
+        height: 100%;
         padding: 10px;
-        max-width: 500px;
     }
 
     div.contato {

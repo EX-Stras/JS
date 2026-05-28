@@ -132,3 +132,5 @@ listaPrecos.forEach((item, index) => {
 })
 console.log(nums)
 console.log(soma)
+
+

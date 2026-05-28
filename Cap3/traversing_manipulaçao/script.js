@@ -1,5 +1,5 @@
 console.clear()
-/*
+
 const Ps = document.querySelector('p')
 const aleatorio = (Math.random() ** 2) * 100;
 
@@ -8,7 +8,7 @@ if (aleatorio < 50){
 } else {
     Ps.innerText = `<b>É maior!!!</b>`
 }
-
+/*
 const pai = Ps.parentElement
 console.log(pai)
 const proximo = Ps.nextElementSibling
