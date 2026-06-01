@@ -33,14 +33,17 @@ header {
     justify-content: flex-start;
     align-items: center;
 }
+
 menu {
     display: flex;
     align-items: center;
 }
+
 menu button {
     border: none;
     background-color: transparent;
 }
+
 header a, header button {
     text-transform: uppercase;
     font-size: 1em;
@@ -48,6 +51,10 @@ header a, header button {
     margin: 0 15px;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.761);
+}
+
+header button[data-menu="button"] {
+    display: none;
 }
 
 i.material-symbols-outlined {
@@ -179,6 +186,14 @@ div[data-mod="grid"]{
     display: grid;
     grid-template: 60px 200px auto 0.5fr 0.5fr 330px 0.5fr 0.5fr 375px 100px 60px/ 1fr 70px 283.375px 406.600px 1fr;
     padding: 20px 0 20px 0;
+}
+
+.azul {
+    background-color: blue;
+}
+
+.vermelho {
+    background-color: red;
 }
 
 .roxo {
@@ -362,7 +377,7 @@ button[type="submit"]:hover {
     padding: 10px 0px;
 }
 
-menu.dropDownMenu {
+menu.dropDownMenu, menu.dropDownMenuMobile {
     position: absolute;
     background-color: #E06600;
     padding: 15.5px;
@@ -374,8 +389,17 @@ menu.dropDownMenu {
     display: none;
 }
 
+menu.dropDownMenuMobile {
+    right: 1%;
+    top: 6%;
+}
+
+menu.dropDownMenuMobile::before {
+    left: 77% !important;
+}
+
 div.drop > menu {
-    display: flex;
+    display: flex !important;
     animation: dropDown .3s forwards;
 }
 
@@ -390,7 +414,7 @@ div.drop > menu {
     }
 }
 
-menu.dropDownMenu::before {
+menu.dropDownMenu::before, menu.dropDownMenuMobile::before{
     content: '';
     color: black;
     display: block;
@@ -404,72 +428,13 @@ menu.dropDownMenu::before {
     border-bottom: 10px solid #E06600;
 }
 
-menu.dropDownMenu a:hover {
+menu.dropDownMenu a:hover, menu.dropDownMenuMobile a:hover {
     color: rgb(242, 242, 242);
-}
-
-.blue {
-    background-color: blue !important;
-}
-
-.red {
-    background-color: red;
-}
-
-section.cronometro {
-    margin: auto;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    width: 40%;
-    height: 200px;
-    display: grid;
-}
-
-div.mostrador {
-    width: 45%;
-    height: 40%;
-    align-self: flex-start;
-    justify-self: center;
-    background-color: var(--cor-terciaria);
-    color: rgb(49, 49, 49);
-    margin-top: 20px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 180px;
-    min-width: 150px;
-}
-
-div.mostrador h1 {
-    font-family: 'Courier New', Courier, monospace;
-    margin-top: 2px;
-}
-
-div.botoes {
-    align-self: flex-start;
-    justify-self: center;
-    display: flex;
-    align-items: flex-start;
-    gap: 50px;
-}
-
-div.botoes button {
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    width: 100px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9em;
-    background-color: #E0A600;
-    font-weight: bold;
-    letter-spacing: .5px;
-    color: rgb(49, 49, 49);;
 }
 
 @keyframes voltar {
     0% {
-        transform: translate3d(50px,0,0);
+        transform: translate3d(30px,0,0);
         opacity: 0.5;
     } 100% {
         transform: translate3d(0,0,0);
@@ -501,7 +466,7 @@ div.botoes button {
         transform: translate3d(0,0,0);
         opacity: 1;
     } 100% {
-        transform: translate3d(50px,0,0);
+        transform: translate3d(30px,0,0);
         opacity: 0.5;
         max-width: 40%;
     }
@@ -560,6 +525,27 @@ div.botoes button {
 
     header {
         grid-area: 1 / 1 / 2 / -1;
+        justify-content: space-between;
+    }
+
+    header button[data-menu="button"] {
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.8em;
+        margin-top: 5px;
+    }
+
+    menu[data-js] a[href^="#"]{
+        display: none;
+    }
+
+    header menu.dropDownMenuMobile{
+        display: none;
+    }
+
+    menu.dropDownMenu {
+        top: 50px;
     }
 
     div.title1 {

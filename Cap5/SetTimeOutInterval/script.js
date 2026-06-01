@@ -28,3 +28,82 @@ function escrever(texto){
 
 const ola = setInterval(escrever, 1000, 'Lucas')
 
+// Mude a cor da tela para azul e depois para vermelho a cada 2s.
+/*
+function mudarCor(){
+    document.body.classList.toggle('blue')
+}
+
+let contador = 0;
+
+const cores = setInterval(mudarCor, 2000)
+*/
+// Crie um cronometro utilizando o setInterval. Deve ser possível
+// iniciar, pausar e resetar (duplo clique no pausar).
+
+
+const iniciar = document.querySelector('button.iniciar')
+const resetar = document.querySelector('button.resetar')
+const mostrador = document.querySelector('h1[data-tempo]')
+let segundos = 0, minutos = 0, horas = 0, ativado = false, contador;
+const html = document.documentElement;
+let x = 0;
+
+iniciar.addEventListener('click', iniciando)
+resetar.addEventListener('click', resetando)
+html.addEventListener('click', waitOrNot)
+
+function iniciando(event){
+    if (ativado == false){
+        function passou(){
+            segundos++;
+            if(segundos == 60){
+                segundos = 0;
+                minutos++;
+                if(minutos == 60){
+                    minutos = 0;
+                    horas++;
+                }
+            }
+            mostrador.innerText = `${horas}:${minutos}:${segundos}`
+        }
+
+        contador = setInterval(passou, 1000)
+        ativado = true;
+    }
+}
+
+function resetando(event){
+    if (ativado == true){
+        event.preventDefault()
+        clearInterval(contador)
+        mostrador.innerText = `0:0:0`
+        ativado = false;
+        segundos = 0; minutos = 0; horas = 0;
+    }
+}
+
+function waitOrNot(){
+    x++;
+    setTimeout(() => {
+        x = 0;
+    }, 200)
+    if(x > 1){
+        clearInterval(contador)
+        ativado = false;
+        html.addEventListener('click', leaveWait)
+        html.removeEventListener('click', waitOrNot)
+    }
+}
+
+function leaveWait(){
+    x++;
+    setTimeout(() => {
+        x = 0;
+    }, 200)
+    if(x > 1){
+        iniciando()
+        html.removeEventListener('click', leaveWait)
+        html.addEventListener('click', waitOrNot)
+    }
+}

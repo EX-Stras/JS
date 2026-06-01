@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
-<body *class="red" data-cor1="blue">
+<body>
     <div data-mod="grid">
       <header>
           <menu data-js="js-menu">
-            <a href="#animais">Animais</a>
+              <a href="#animais">Animais</a>
+              <a href="#faq">Faq</a>
+              <a href="#contato">Contato</a>
+              <a href="https://www.cursoemvideo.com/">Login<i class="material-symbols-outlined">arrow_forward</i></a>
               <div data-drop>
                 <a href="sobre.html">Sobre</a>
                 <menu class="dropDownMenu" data-drop="drop">
@@ -21,10 +24,15 @@
                   <a href="investidores.html">Investidores</a>
                 </menu>
               </div>
-            <a href="#faq">Faq</a>
-            <a href="#contato">Contato</a>
-            <a href="https://www.cursoemvideo.com/">Login<i class="material-symbols-outlined">arrow_forward</i></a>
           </menu>
+          <div data-dropMobile>
+          <button data-menu="button" aria-expanded="false" aria-controls="menu"><i class="material-symbols-outlined">menu</i></button>
+            <menu class="dropDownMenuMobile" data-drop="dropMobile">
+              <a href="#animais">Animais</a>
+              <a href="#faq">Faq</a>
+              <a href="#contato">Contato</a>
+            </menu>
+          </div>
       </header>
       <div class="title1" data-js="js-scroll" id="animais">
           <h1 data-cor="azul" data-width="500">
@@ -138,18 +146,8 @@
               <label for="senha">Senha:</label>
               <input type="password" name="senha" id="email">
             </p>
-            <button type="submit">Entrar</button>
+            <button type="submit" onclick="Processar()">Entrar</button>
           </form>
-      </div>
-    </section>
-
-    <section class="cronometro">
-      <div class="mostrador">
-        <h1 data-tempo>0:0:0</h1>
-      </div>
-      <div class="botoes">
-        <button class="iniciar">INICIAR</button>
-        <button class="resetar">RESETAR</button>
       </div>
     </section>
 
