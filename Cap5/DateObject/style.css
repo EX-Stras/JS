@@ -437,6 +437,22 @@ div.drop button i {
     transition: .3s;
 }
 
+p[data-horario]::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background-color: #E06600;
+    border-radius: 50%;
+    border: 2px solid #000;
+    margin-left: 5px;
+}
+
+p.aberto::after {
+    background-color: limegreen;
+}
+
+
+
 @keyframes voltar {
     0% {
         transform: translate3d(30px,0,0);

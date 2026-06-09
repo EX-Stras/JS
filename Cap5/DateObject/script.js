@@ -8,6 +8,7 @@ import modalP from "./Animacoes/modal.js";
 import initToolTip from "./Animacoes/tooltip.js";
 import dropDownMenu from "./Animacoes/dropDownMenu.js";
 import menuMobile from "./Animacoes/menuMobile.js";
+import initFuncionamento from "./Animacoes/date.js";
 
 initTabNav()
 accordion_list()
@@ -17,3 +18,4 @@ modalP()
 initToolTip()
 dropDownMenu()
 menuMobile()
+initFuncionamento()
