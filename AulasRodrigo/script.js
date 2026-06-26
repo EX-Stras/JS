@@ -1,5 +1,6 @@
-const img = document.querySelector('img')
+const img = document.querySelector('main img')
 const p = document.querySelector('p.ico')
+const audio = new Audio('re-zero-return-by-death.mp3')
 
 p.addEventListener('click', imgMove)
 img.addEventListener('click', HandleClick)
@@ -26,5 +27,6 @@ function imgMove(event){
         img.style.transform = "translate3d(0,0,0)"
         img.style.opacity = "1"
         contador2 = false
+        audio.play()
     }
 }
