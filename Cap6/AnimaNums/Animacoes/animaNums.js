@@ -14,7 +14,7 @@ export default function animaNums(){
 
     async function puxar() {
         window.removeEventListener('scroll', handleScroll)
-        const response = await fetch("./../json/dados.json")
+        const response = await fetch("https://ex-stras.github.io/JS/Cap6/AnimaNums/json/dados.json")
         const dados = await response.json()
         
         H2s.forEach((item, index) => {
