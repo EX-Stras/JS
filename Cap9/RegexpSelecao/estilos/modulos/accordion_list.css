@@ -1,0 +1,36 @@
+[data-js='js-accordion'] p {
+    display: none;
+}
+
+[data-js='js-accordion'] p.show-right {
+    animation: baixo 1s forwards;
+}
+
+[data-js='js-accordion'] h2 {
+    cursor: pointer;
+}
+
+.mudar {
+    animation: mudar 1s forwards;
+}
+
+@keyframes mudar {
+    0% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+    100% {
+        opacity: 0.5;
+        transform: translate3d(-30px,0,0);
+    }
+}
+
+@keyframes baixo {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    } 100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
