@@ -25,3 +25,5 @@ initFuncionamento();
 initForms();
 animaNums();
 initBitcoin();
+
+console.log('ola');
