@@ -4,7 +4,7 @@ export default function animacaoScroll() {
   function HandleScroll() {
     titles.forEach((title) => {
       const mapa = title.getBoundingClientRect();
-      if (mapa.y < 500) {
+      if (mapa.y < 350) {
         title.classList.add('reveal');
         title.nextElementSibling.classList.add('reveal');
       }

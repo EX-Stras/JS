@@ -1,7 +1,7 @@
 import initTabNav from './Animacoes/InitTabNav.js';
 import accordionList from './Animacoes/accordion_list.js';
 import animacaoScroll from './Animacoes/animacao_scroll.js';
-import scrollSuave from './Animacoes/scroll_suave.js';
+import ScrollSuave from './Animacoes/scroll_suave.js';
 import modalP from './Animacoes/modal.js';
 import initToolTip from './Animacoes/tooltip.js';
 import dropDownMenu from './Animacoes/dropDownMenu.js';
@@ -16,7 +16,10 @@ console.clear();
 initTabNav();
 accordionList();
 animacaoScroll();
-scrollSuave();
+
+const scroll = new ScrollSuave('header a[href^="#"');
+scroll.addAnimation();
+
 modalP();
 initToolTip();
 dropDownMenu();
