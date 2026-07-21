@@ -6,8 +6,9 @@ export default class AccordionList {
   }
 
   show(element) {
-    element.classList.toggle(this.animationFor1);
-    element.nextElementSibling.classList.toggle(this.animationFor2);
+    const proximo = element.nextElementSibling;
+    element.classList.toggle(this.animationFor1 || element.dataset.anime);
+    proximo.classList.toggle(this.animationFor2 || proximo.dataset.anime);
   }
 
   init() {
@@ -16,8 +17,10 @@ export default class AccordionList {
         this.show(element);
       });
     });
-    this.elements[0].classList.add(this.animationFor1);
-    this.elements[0].nextElementSibling.classList.add(this.animationFor2);
+    const proximo0 = this.elements[0].nextElementSibling;
+    this.elements[0].classList.add(this.animationFor1 || this.elements[0].dataset.anime);
+    proximo0.classList.add(this.animationFor2 || proximo0.dataset.anime);
+
     return this.elements;
   }
 }

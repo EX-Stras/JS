@@ -2,7 +2,7 @@ import TabNav from './Animacoes/InitTabNav.js';
 import AccordionList from './Animacoes/accordion_list.js';
 import animacaoScroll from './Animacoes/animacao_scroll.js';
 import ScrollSuave from './Animacoes/scroll_suave.js';
-import modalP from './Animacoes/modal.js';
+import ModalP from './Animacoes/modal.js';
 import initToolTip from './Animacoes/tooltip.js';
 import dropDownMenu from './Animacoes/dropDownMenu.js';
 import menuMobile from './Animacoes/menuMobile.js';
@@ -24,7 +24,9 @@ animacaoScroll();
 const scroll = new ScrollSuave('header a[href^="#"');
 scroll.addAnimation();
 
-modalP();
+const modal = new ModalP('section[data-modal=conteiner]', 'header a[href^=https]', 'section button[data-modal=fecharX]');
+modal.init();
+
 initToolTip();
 dropDownMenu();
 menuMobile();
