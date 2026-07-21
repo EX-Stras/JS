@@ -1,0 +1,14 @@
+.reveal {
+    animation: .5s revelar forwards;
+    display: grid;
+}
+
+@keyframes revelar {
+    0% {
+        transform: translate3d(-20px, -20px, 0);
+        opacity: 0;
+    } 100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
