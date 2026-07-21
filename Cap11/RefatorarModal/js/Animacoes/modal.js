@@ -12,7 +12,7 @@ export default class ModalP {
 
   toggleModal(event) {
     event.preventDefault();
-    this.selector1.classList.toggle(this.class1 || this.selector1.dataset.modal);
+    this.selector1.classList.toggle(this.class1 || this.selector1.dataset.anime);
   }
 
   init() {

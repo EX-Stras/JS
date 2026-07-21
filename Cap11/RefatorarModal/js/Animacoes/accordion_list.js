@@ -1,14 +1,15 @@
 export default class AccordionList {
-  constructor(selector, animationFor1, animationFor2) {
+  constructor(selector, class1, class2) {
     this.elements = document.querySelectorAll(selector);
-    this.animationFor1 = animationFor1;
-    this.animationFor2 = animationFor2;
+    this.class1 = class1; // animação do receptor
+    this.class2 = class2; // animação do reagente
+    this.next = this.elements[0].nextElementSibling; // variável de ajuda
   }
 
   show(element) {
-    const proximo = element.nextElementSibling;
-    element.classList.toggle(this.animationFor1 || element.dataset.anime);
-    proximo.classList.toggle(this.animationFor2 || proximo.dataset.anime);
+    this.next = element.nextElementSibling;
+    element.classList.toggle(this.class1 || element.dataset.anime);
+    this.next.classList.toggle(this.class2 || this.next.dataset.anime);
   }
 
   init() {
@@ -17,10 +18,10 @@ export default class AccordionList {
         this.show(element);
       });
     });
-    const proximo0 = this.elements[0].nextElementSibling;
-    this.elements[0].classList.add(this.animationFor1 || this.elements[0].dataset.anime);
-    proximo0.classList.add(this.animationFor2 || proximo0.dataset.anime);
+    this.next = this.elements[0].nextElementSibling;
+    this.elements[0].classList.add(this.class1 || this.elements[0].dataset.anime);
+    this.next.classList.add(this.class2 || this.next.dataset.anime);
 
-    return this.elements;
+    return this;
   }
 }

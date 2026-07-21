@@ -1,18 +1,18 @@
 export default class TabNav {
-  constructor(selector1, selector2, desativacao, animation) {
-    this.selector1 = document.querySelectorAll(selector1);
-    this.selector2 = document.querySelectorAll(selector2);
-    this.animation = animation;
-    this.desativacao = desativacao;
+  constructor(selector1, selector2, class1, class2) {
+    this.selector1 = document.querySelectorAll(selector1); // recebe o click
+    this.selector2 = document.querySelectorAll(selector2); // reage ao click
+    this.class1 = class1; // classe de desativação
+    this.class2 = class2; // classe de animação
   }
 
   show(index) {
     this.selector2.forEach((content) => {
-      content.classList.remove(this.animation || content.dataset.anime);
-      content.classList.add(this.desativacao || 'desativo');
+      content.classList.remove(this.class2 || content.dataset.anime);
+      content.classList.add(this.class1 || 'desativo');
     });
-    this.selector2[index].classList.add(this.animation || this.selector2[index].dataset.anime);
-    this.selector2[index].classList.remove(this.desativacao || 'desativo');
+    this.selector2[index].classList.add(this.class2 || this.selector2[index].dataset.anime);
+    this.selector2[index].classList.remove(this.class1 || 'desativo');
   }
 
   init() {
@@ -22,6 +22,8 @@ export default class TabNav {
       });
     });
     this.show(0);
+
+    return this;
   }
 }
 
