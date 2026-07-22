@@ -1,26 +1,26 @@
 export default class AccordionList {
-  constructor(selector, class1, class2) {
-    this.elements = document.querySelectorAll(selector);
+  constructor(selector1, class1, class2) {
+    this.selector1 = document.querySelectorAll(selector1);
     this.class1 = class1; // animação do receptor
     this.class2 = class2; // animação do reagente
-    this.next = this.elements[0].nextElementSibling; // variável de ajuda
+    this.$ = ''; // variável auxiliar
   }
 
   show(element) {
-    this.next = element.nextElementSibling;
+    this.$ = element.nextElementSibling;
     element.classList.toggle(this.class1 || element.dataset.anime);
-    this.next.classList.toggle(this.class2 || this.next.dataset.anime);
+    this.$.classList.toggle(this.class2 || this.$.dataset.anime);
   }
 
   init() {
-    this.elements.forEach((element) => {
-      element.addEventListener('click', () => {
-        this.show(element);
+    if (this.selector1.length) {
+      this.selector1.forEach((element) => {
+        element.addEventListener('click', () => this.show(element));
       });
-    });
-    this.next = this.elements[0].nextElementSibling;
-    this.elements[0].classList.add(this.class1 || this.elements[0].dataset.anime);
-    this.next.classList.add(this.class2 || this.next.dataset.anime);
+      this.$ = this.selector1[0].nextElementSibling;
+      this.selector1[0].classList.add(this.class1 || this.selector1[0].dataset.anime);
+      this.$.classList.add(this.class2 || this.$.dataset.anime);
+    }
 
     return this;
   }

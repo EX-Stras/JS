@@ -16,8 +16,12 @@ export default class ModalP {
   }
 
   init() {
-    this.selector1.addEventListener('click', (event) => this.outsideModal(event));
-    this.selector2.addEventListener('click', (event) => this.toggleModal(event));
-    this.selector3.addEventListener('click', (event) => this.toggleModal(event));
+    if (this.selector1 && this.selector2 && this.selector3) {
+      this.selector1.addEventListener('click', (event) => this.outsideModal(event));
+      this.selector2.addEventListener('click', (event) => this.toggleModal(event));
+      this.selector3.addEventListener('click', (event) => this.toggleModal(event));
+    }
+
+    return this;
   }
 }

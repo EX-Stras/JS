@@ -4,24 +4,28 @@ export default class TabNav {
     this.selector2 = document.querySelectorAll(selector2); // reage ao click
     this.class1 = class1; // classe de desativação
     this.class2 = class2; // classe de animação
+    this.$ = ''; // variável auxiliar
   }
 
   show(index) {
     this.selector2.forEach((content) => {
-      content.classList.remove(this.class2 || content.dataset.anime);
-      content.classList.add(this.class1 || 'desativo');
+      this.$ = content.classList;
+      this.$.remove(this.class2 || content.dataset.anime);
+      this.$.add(this.class1 || 'desativo');
     });
-    this.selector2[index].classList.add(this.class2 || this.selector2[index].dataset.anime);
-    this.selector2[index].classList.remove(this.class1 || 'desativo');
+    this.$ = this.selector2[index];
+    this.$.classList.add(this.class2 || this.$.dataset.anime);
+    this.$.classList.remove(this.class1 || 'desativo');
   }
 
   init() {
-    this.selector1.forEach((element, index) => {
-      element.addEventListener('click', () => {
-        this.show(index);
+    if (this.selector1.length && this.selector2.length) {
+      this.selector1.forEach((element, index) => {
+        element.addEventListener('click', () => this.show(index));
       });
-    });
-    this.show(0);
+
+      this.show(0);
+    }
 
     return this;
   }

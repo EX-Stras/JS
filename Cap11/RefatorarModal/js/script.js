@@ -22,7 +22,7 @@ accordion.init();
 animacaoScroll();
 
 const scroll = new ScrollSuave('header a[href^="#"');
-scroll.addAnimation();
+scroll.init();
 
 const modal = new ModalP('section[data-anime=conteiner]', 'header a[href^=https]', 'section button[data-modal=fecharX]');
 modal.init();
