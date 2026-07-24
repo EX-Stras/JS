@@ -1,0 +1,47 @@
+.desativo {
+    opacity: 0;
+    display: none;
+}
+
+.show-down {
+    display: block;
+    animation: PrimeiroAnimal 1s forwards;
+} 
+
+.show-up {
+    display: block;
+    animation: UltimoAnimal 1s forwards;
+}
+
+@keyframes animais {
+    0% {
+        opacity: 0;
+        transform: translate3d(-30px, 0, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes PrimeiroAnimal {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes UltimoAnimal {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
