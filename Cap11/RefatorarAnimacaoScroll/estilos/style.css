@@ -1,0 +1,387 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --coopacity: 0;
+    --cor-secundaria: #E06600;
+    --cor-terciaria: #E0A600;
+}
+
+body {
+    background-color: rgba(255, 166, 0, 0.163);
+}
+
+div[data-mod="flex"]{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    height: 60px;
+}
+
+menu {
+    background-color: var(--cor-terciaria);
+    grid-area: 1 / 2 / 2 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div[data-links]{
+    display: flex;
+}
+
+menu button {
+    border: none;
+    background-color: transparent;
+}
+
+a, button {
+    text-transform: uppercase;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.761);
+    font-family: "IBM Plex Mono";
+}
+
+header button[data-menu="button"] {
+    display: none;
+}
+
+i.material-symbols-outlined {
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+[data-title]{
+    display: grid;
+    grid-template-rows: 15px 2fr 20px;
+    grid-template-columns: 100px 1fr 200px;
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+[data-title] h1, h2 {
+    font-family: "IBM Plex Mono" !important;
+}
+
+[data-title] h1::first-letter {
+    font-size: 1.2em;
+}
+
+div.title1 h1 {
+    grid-area: 2 / 2 / 3 / 3;
+    max-width: 1px;
+}
+
+span {
+    font-size: 1.2em;
+}
+
+div.imgs {
+    height: 400px;
+    overflow-y: scroll;
+    width: 90%;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    grid-area: 1 / 2 / 2 / 3;
+} 
+
+div.imgs section {
+    width: 98%;
+}
+
+div.imgs img {
+    width: 100%;
+    background-color: black;
+    cursor: pointer;
+}
+
+main.primario {
+    display: grid;
+    grid-template-columns: 100px .6fr 1fr 50px;
+    max-width: 1000px;
+    margin-bottom: 50px;
+}
+
+div[data-texto]{
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+h2 {
+    display: flex;
+    align-items: center;
+}
+
+main.primario h2 { 
+    font-size: 1em;
+    color: var(--cor-secundaria);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    margin: 15px 0;
+    line-height: 1.2em;
+    text-align: justify;
+    font-family: "Open Sans";
+}
+
+span.m {
+    background-color: var(--cor-terciaria);
+    font-size: 0.5em;
+    padding: 5px 20px;
+    margin-right: 10px;
+    margin-top: 1px;
+}
+
+h1 {
+    color: rgba(0, 0, 0, 0.724);
+    font-family: serif;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+div.numeros {
+    max-width: 500px;
+    height: 250px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+div.numeros div[data-secao] p {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    color: var(--cor-terciaria);
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+div.numeros h2 {
+    color: var(--cor-secundaria);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    justify-content: center;
+    font-size: 2.3em;
+}
+
+div.faq {
+    display: grid;
+    grid-template-columns: 100px 1fr 200px;
+    grid-template-rows: 1fr;
+}
+
+div.faq article {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+} 
+
+div.faq h2 {
+    font-size: 1em;
+    color: var(--cor-secundaria);
+}
+
+span.q {
+    background-color: var(--cor-terciaria);
+    font-size: 0.5em;
+    padding: 5px 15px;
+    margin-right: 10px;
+    margin-top: 1px;
+}
+
+div.title3 {
+    font-size: 2.3em;
+}
+
+div.title3 h1 {
+    color: rgba(0, 0, 0, 0.724);
+    text-transform: uppercase;
+}
+
+div[data-contato]{
+    display: grid;
+    grid-template-columns: 100px 4fr 4fr;
+    grid-template-rows: 1fr 50px;
+    max-width: 1000px;
+}
+
+div.imgc {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+div.contato {
+    margin-left: 10px;
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+div.contato p {
+    display: flex;
+    align-items: center;
+}
+
+div.imgc img {
+    height: 100%;
+    width: 100%;
+    min-width: 150px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    height: 60px;
+}
+
+footer [data-direitos] {
+    background-color: var(--cor-terciaria);
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    align-items: center;
+}
+
+footer p {
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 15px;
+    color: black;
+}
+
+/* ANIMACOES GLOBAIS */
+
+.show-right {
+    display: block !important;
+    animation: animais 1s forwards;
+}
+
+/**/
+
+@media screen and (max-width: 780px){
+
+    div[data-mod="flex"]{
+        display: flex;
+        flex-direction: column;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    header {
+        grid-template-columns: 1fr;
+    }
+
+    menu {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    div[data-dropMobile]{
+        justify-self: flex-end;
+    }
+
+    header button[data-menu="button"] {
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.8em;
+        margin-top: 5px;
+    }
+
+    menu[data-js] div[data-links] a[href^="#"]{
+        display: none;
+    }
+
+    [data-title] {
+        grid-template-columns: 1fr 200px;
+    }
+
+    [data-title] h1 {
+        grid-area: 2 / 1 / 3 / 2 !important;
+    }
+
+    div.imgs {
+        grid-area: 1 / 1 / 2 / 2;
+        margin-left: 10px;
+        width: 80%;
+    }
+
+    div[data-texto]{
+        grid-area: 1 / 2 / 2 / 3;
+    }
+
+    div.imgs section {
+        width: 97%;
+    }
+
+    main.primario {
+        grid-template-columns: .6fr 1fr 50px;
+        padding-right: 10px;
+        max-width: 100%;
+    }
+
+    div.title2 {
+        max-width: 30%;
+    }
+
+    div.faq {
+        grid-template-columns: 1fr 50px;
+        padding: 0 10px 0 10px;
+        max-width: 100%;
+        margin-left: 30px;
+    }
+
+    div.faq article {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    div[data-contato]{
+        grid-template-columns: 10px 4fr 5fr;
+    }
+    
+    div.contato p {
+        padding-right: 10px;
+    }
+
+    [data-title] {
+        padding-left: 10px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+
+    div[data-direitos]{
+        grid-area: 1 / 1 / 2 / 2;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    
+    [data-title]{
+        font-size: 1.5em !important;
+    }
+
+    div.numeros h2 {
+        font-size: 1.8em !important;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+    
+}
