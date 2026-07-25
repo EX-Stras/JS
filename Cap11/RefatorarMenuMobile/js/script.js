@@ -33,9 +33,6 @@ tooltip.init();
 const dropDownMenu = new DropDownMenu('div[data-drop]', 'drop');
 dropDownMenu.init();
 
-const menuMobile = new DropDownMenu('div[data-dropMobile]', 'drop');
-menuMobile.init();
-
 initFuncionamento();
 initForms();
 
