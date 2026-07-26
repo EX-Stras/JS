@@ -5,7 +5,7 @@ import ScrollSuave from './Animacoes/scroll_suave.js';
 import ModalP from './Animacoes/modal.js';
 import ToolTip from './Animacoes/tooltip.js';
 import DropDownMenu from './Animacoes/dropDownMenu.js';
-import initFuncionamento from './Animacoes/date.js';
+import Funcionamento from './Animacoes/date.js';
 import initForms from './Animacoes/form.js';
 import AnimaNums from './Animacoes/animaNums.js';
 import Bitcoin from './Animacoes/bitcoin.js';
@@ -33,7 +33,9 @@ tooltip.init();
 const dropDownMenu = new DropDownMenu('div[data-drop]', 'drop');
 dropDownMenu.init();
 
-initFuncionamento();
+const funcionamento = new Funcionamento('p[data-horario]', 'aberto');
+funcionamento.init();
+
 initForms();
 
 const animaNums = new AnimaNums('div.numeros p', 'div.numeros', 'https://ex-stras.github.io/JS/Cap11/RefatorarAnimaNums/js/json/dados.json');

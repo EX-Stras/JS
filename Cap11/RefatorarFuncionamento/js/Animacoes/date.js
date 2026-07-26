@@ -1,14 +1,29 @@
-export default function initFuncionamento() {
-  const p = document.querySelector('p[data-horario]');
-  const agora = new Date();
+export default class Funcionamento {
+  constructor(selector1, class1) {
+    this.selector1 = document.querySelectorAll(selector1);
+    this.class1 = class1;
+  }
 
-  const horas = p.dataset.horario.split(',');
+  test(item) {
+    const now = new Date();
+    const hours = item.dataset.horario.split(',').map(Number);
+    const days = item.dataset.semana.split(',').map(Number);
 
-  const dias = p.dataset.semana.split(',');
+    const dayNow = now.getDay();
+    let hourNow = now.getUTCHours() - 3;
+    hourNow = hourNow < 0 ? 24 + hourNow : now.getUTCHours();
 
-  if (+horas[0] <= agora.getHours() && +horas[1] > agora.getHours()) {
-    if (+dias[0] <= agora.getDay() && +dias[1] > agora.getDay()) {
-      p.classList.add('aberto');
+    const HoursOpen = hours[0] <= hourNow && hours[1] > hourNow;
+    const DaysOpen = days[0] <= dayNow && days[1] > dayNow;
+
+    if (HoursOpen && DaysOpen) {
+      item.classList.add(this.class1 || item.dataset.anime);
+    }
+  }
+
+  init() {
+    if (this.selector1.length) {
+      this.selector1.forEach((item) => this.test(item));
     }
   }
 }
