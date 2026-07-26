@@ -46,7 +46,6 @@ export default class ToolTip {
         event.addEventListener('mouseover', this.onMouseOver);
       });
     }
-
     return this;
   }
 }

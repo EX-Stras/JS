@@ -26,7 +26,6 @@ export default class TabNav {
 
       this.show(0);
     }
-
     return this;
   }
 }

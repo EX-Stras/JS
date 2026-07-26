@@ -17,5 +17,6 @@ export default class Bitcoin {
         console.log(Error(error));
       }
     }
+    return this;
   }
 }

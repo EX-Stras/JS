@@ -25,5 +25,6 @@ export default class Funcionamento {
     if (this.selector1.length) {
       this.selector1.forEach((item) => this.test(item));
     }
+    return this;
   }
 }

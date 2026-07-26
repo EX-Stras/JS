@@ -41,7 +41,6 @@ export default class AnimaNums {
         console.log(Error(error));
       }
     }
-
     return this;
   }
 }

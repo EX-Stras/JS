@@ -33,8 +33,11 @@ export default class AnimacaoScroll {
   }
 
   init() {
-    this.getDistance();
-    window.addEventListener('scroll', this.handleScroll);
-    this.add(this.selector1[0]);
+    if (this.selector1.length) {
+      this.getDistance();
+      window.addEventListener('scroll', this.handleScroll);
+      this.add(this.selector1[0]);
+    }
+    return this;
   }
 }

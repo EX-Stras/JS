@@ -23,5 +23,6 @@ export default class DropDownMenu {
         item.addEventListener('click', (event) => this.dropMenu(event, item));
       });
     }
+    return this;
   }
 }
