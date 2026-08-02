@@ -9,7 +9,7 @@ import Funcionamento from './Animacoes/date.js';
 import initForms from './Animacoes/form.js';
 import AnimaNums from './Animacoes/animaNums.js';
 import Bitcoin from './Animacoes/bitcoin.js';
-import ButtonSlide from './Animacoes/buttonsSlide.js';
+import ButtonsSlide from './Animacoes/buttonsSlide.js';
 
 console.clear();
 
@@ -22,7 +22,7 @@ accordion.init();
 const animacaoScroll = new AnimacaoScroll('div[data-anime="reveal"]');
 animacaoScroll.init();
 
-const scroll = new ScrollSuave('header a[href^="#"');
+const scroll = new ScrollSuave('header a[href^="#"]');
 scroll.init();
 
 const modal = new ModalP('section[data-anime=conteiner]', 'header a[href^=https]', 'section button[data-modal=fecharX]');
@@ -42,8 +42,10 @@ initForms();
 const animaNums = new AnimaNums('div.numeros p', 'div.numeros', 'https://ex-stras.github.io/JS/Cap11/RefatorarAnimaNums/js/json/dados.json');
 animaNums.init();
 
-const buttonsSlide = new ButtonSlide('div.slide', 'div.wrapper');
-buttonsSlide.init();
+const slide = new ButtonsSlide('div.slide ul', 'div.slide');
+slide.init();
+slide.Controls(false, 'div.custom-controls ul li');
+slide.activeArrows('.Bnext', '.Bprev');
 
 const bitcoin = new Bitcoin('span[data-bitcoin]', '1000');
 bitcoin.init();
